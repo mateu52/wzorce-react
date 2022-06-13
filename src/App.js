@@ -1,14 +1,21 @@
 //import logo from './logo.svg';
 //import './App.css';
-
+import React from 'react';
 const theme = {
   color:"blue"
 }
+const MyContext = React.createContext();
+
 function Split({props}){
   return(
-    <div>
-      <h2 style={{color: "green"}}>Witam</h2>
-    </div>
+    <MyContext.Consumer>
+      {value=>(
+        <div>
+        <h2 style={{color: value.color}}>Witam</h2>
+      </div>
+      )}
+      
+    </MyContext.Consumer>
   )
 }
 function FancyBorder({ props }) {
@@ -19,10 +26,14 @@ function FancyBorder({ props }) {
     </div>
   );
 }
+
 function App() {
   return (
     <div className="App">
-      <FancyBorder />
+      <MyContext.Provider value={theme}>
+        <FancyBorder />
+      </MyContext.Provider>
+      
       <h1>Hello CodeSandbox</h1>
     </div>
   );
