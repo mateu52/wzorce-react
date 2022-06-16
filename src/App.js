@@ -30,7 +30,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Hello name="Mateusz" />
+      {/* <Hello name="Mateusz" /> */}
+     
     </div>
   );
 }
