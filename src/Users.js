@@ -1,5 +1,5 @@
 import React from "react";
-
+import UsersLists from "./UsersLists";
 class Users extends React.Component{
     state={
         users: []
@@ -7,20 +7,17 @@ class Users extends React.Component{
     componentDidMount(){
         fetch('https://randomuser.me/api/?results=10')
         .then(response=>response.json())
-        .then(data.this.setState({ users: data.results}))
+        .then(data =>this.setState({ users: data.results}));
+    }
         render(){
             const {users} = this.state
             return(
                 <div>
-                    {users && users.map(user => {
-                        <div>
-                            {user.name.first} {user.name.first}
-                        </div>
-                    })}
+                    <UsersLists users={users} />
                 </div>
-            )
+            );
         }
-    }
+    
 }
 
 export default Users;

@@ -1,6 +1,7 @@
 import './App.css';
  import React from 'react';
- import Hello from './Hello';
+ //import Hello from './Hello';
+ import Users from './Users';
 // const theme = {
 //   color:"blue"
 // }
@@ -29,14 +30,14 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      {/* <Hello name="Mateusz" /> */}
-     
-    </div>
+      //   {/* <Hello name="Mateusz" /> */}
+      <div className="App">
+        <Users />
+      </div>
   );
 }
 
- export default App;
+export default App;
 
 // function App() {
 //   return (
