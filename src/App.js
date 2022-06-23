@@ -1,7 +1,21 @@
-import './App.css';
- import React from 'react';
+import React from "react";
+import WindowSize from "./WindowSize";
+
+export default function App() {
+  return (
+    <div className="App">
+      <WindowSize />
+    </div>
+  );
+}
+
+// import './App.css';
+// import React from 'react';
+// import WindowSize from './WindowSize';
  //import Hello from './Hello';
- import Users from './Users';
+ //import Users from './Users';
+ //import WindowResize from './WindowResize'
+
 // const theme = {
 //   color:"blue"
 // }
@@ -28,16 +42,18 @@ import './App.css';
 //   );
 // }
 
-function App() {
-  return (
-      //   {/* <Hello name="Mateusz" /> */}
-      <div className="App">
-        <Users />
-      </div>
-  );
-}
+// function App() {
+//   return (
+//       //   {/* <Hello name="Mateusz" /> */}
+//       <div className="App">
+//         <WindowSize />
+//         {/* <WindowResize /> */}
+//         {/* <Users /> */}
+//       </div>
+//   );
+// }
 
-export default App;
+// export default App;
 
 // function App() {
 //   return (
