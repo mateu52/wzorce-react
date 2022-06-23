@@ -1,44 +1,22 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
-function useWindowSize() {
-  const [{ width, height }, setSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight
-  });
-  useEffect(() => {
-    const handleResize = () =>
-      setSize({
+function useWindowSize(){
+    const [ { height, width }, setSize ] = useState({
         width: window.innerWidth,
         height: window.innerHeight
-      });
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [setSize]);
-  return { width, height };
-}
+    });
 
-export default useWindowSize;
-// import { useEffect, useState } from "react";
+    useEffect(()=>{
+        const hResize = () =>
+            setSize({
+                width: window.innerWidth,
+                height: window.innerHeight
+            });
+        window.addEventListener('resize', hResize);
+    },[setSize])
 
-// function useWindowSize(){
-//     const [ { height, width }, setSize ] = useState({
-//         width: window.innerWidth,
-//         height: window.innerHeight
-//     });
-
-//     useEffect(()=>{
-//         const hResize = () =>
-//             setSize({
-//                 width: window.innerWidth,
-//                 height: window.innerHeight
-//             });
-//         window.addEventListener('resize', hResize);
-//     },[setSize])
-
-//     return {height, width};
-// };
+    return {height, width};
+};
 
 
 
